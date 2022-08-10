@@ -1,0 +1,69 @@
+1 ethernet ping 142.250.182.14
+{
+    "L2": [
+        {
+            "rule_id": 168,
+            "src_mac": "52:54:00:f7:69:35",
+            "rule": "allow"
+        },
+        {
+            "rule_id": 168,
+            "src_mac": "52:54:00:d6:10:87",
+            "rule": "allow"
+        }
+    ],
+    "L3V4": [],
+    "L4TCP": [],
+    "L4UDP": []
+}
+
+
+2. ip, command : nping -c 5 --delay 20ms --tcp -S 142.250.182.14 192.168.130.135, 
+DOS = nping -c 101 --delay 20ms --tcp -S 142.250.182.14 192.168.130.135
+
+{
+    "L2": [],
+    "L3V4": [
+        {
+            "rule_id": 57,
+            "src_ip": "142.250.182.14",
+            "rule": "allow"
+        }
+    ],
+    "L4TCP": [],
+    "L4UDP": []
+}
+
+3 UDP, cmmand nping -c 1 --delay 20ms --udp -p 9876 192.168.130.135
+{
+    "L2": [],
+    "L3V4": [],
+    "L4TCP": [],
+    "L4UDP": [
+        {
+            "rule_id": 57,
+            "udpdest_port": 9876,
+            "rule": "allow"
+        }
+    ]
+}
+
+4 tcp nping -c 5 --delay 20ms --tcp -p 9876 -S 142.250.182.14 192.168.130.135
+{
+    "L2": [],
+    "L3V4": [],
+    "L4TCP": [
+        {
+            "rule_id": 57,
+            "src_ip": "142.250.182.14",
+            "rule": "allow"
+        },
+        {
+            "rule_id": 57,
+            "tcpdest_port": 9876,
+            "rule": "allow"
+        }
+
+    ],
+    "L4UDP": []
+}

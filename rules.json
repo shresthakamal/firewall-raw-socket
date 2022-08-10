@@ -1,0 +1,12 @@
+{
+    "L2": [],
+    "L3V4": [
+        {
+            "rule_id": 57,
+            "ipv4protocol": 1,
+            "rule": "allow"
+        }
+    ],
+    "L4TCP": [],
+    "L4UDP": []
+}
